@@ -1,0 +1,9 @@
+<div class="child">
+    <h5>Child#2 Compenent</h5>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" (keyup.enter)="addUser(user); user='';"  [(ngModel)]="user"  placeholder="User Name" aria-label="User Name" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" color="success" type="button" (click)="addUser(user); user='';">Submit</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,10 @@
+<div class="child">
+    <h5>Child#3 Compenent</h5>
+    <div class="input-group mb-3">
+        <input #brand type="text" class="form-control" (keyup.enter)="addBrand(brand.value); brand.value='';" placeholder="Brand Name" aria-label="Brand Name" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-primary" color="success" type="button" (click)="addBrand(brand.value); brand.value='';">Submit</button>
+            <button class="btn btn-primary mx-3" color="success" type="button" (click)="sendBrnadToSibling(brand.value);">Connect to Sibling</button>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12">
+        <app-carousel [carouselImages]="allImages" [carouselName]="'carouselWith12Col'"></app-carousel>
+        <a class="nav-link" href="rough-carousel">Carousel Testing Phase</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <app-image2x2 [products]="salesProducts">
+            <h1>Sales Products</h1>
+            <a href="#" class="link">Visit Store...</a>
+        </app-image2x2>
+    </div>
+    <div class="col-3">
+        <app-image2x2 [products]="topProducts">
+            <h1>Top Products</h1>
+            <!-- <h1 class="header">Top Products122</h1> -->
+            <a href="#" class="link text-end">See more...</a>
+        </app-image2x2>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-6">
+                <app-carousel [carouselImages]="carousel3c1" [carouselName]="'carouselWith3Col1'"></app-carousel>
+            </div>
+            <div class="col-6">
+                <app-carousel [carouselImages]="carousel3c2" [carouselName]="'carouselWith3Col2'"></app-carousel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <app-carousel [carouselImages]="carousel3c3" [carouselName]="'carouselWith3Col3'"></app-carousel>
+            </div>
+            <div class="col-6">
+                <app-carousel [carouselImages]="carousel3c4" [carouselName]="'carouselWith3Col4'"></app-carousel>
+            </div>
+        </div>
+        
+    </div>
+</div>

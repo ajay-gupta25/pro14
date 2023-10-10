@@ -1,0 +1,15 @@
+<div class="child">
+    <h5>Child#1 Compenent</h5>
+    <div class="input-group mb-3">
+        <input #productName type="text"  (keyup.enter)="addProduct(productName.value, productPrice.value); productName.value=productPrice.value=''" class="form-control" placeholder="Product Name" aria-label="Product Name" aria-describedby="basic-addon2">
+        <!-- <div class="input-group  mx-3"> -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input #productPrice type="number"  (keyup.enter)="addProduct(productName.value, productPrice.value); productName.value=productPrice.value=''" class="form-control" placeholder="Product Price" aria-label="Amount (to the nearest dollar)">
+            <!-- </div> -->
+            <div class="input-group-append">
+                <button class="btn btn-primary" color="primary" type="button" (click)="addProduct(productName.value, productPrice.value); productName.value=productPrice.value=''">Submit</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,17 @@
+
+*{
+    /* border: 1px solid red; */
+    /* background-color: #dadada; */
+}
+
+
+:host ::ng-deep{
+    /* border: 3px solid green !important;
+    background-color: red !important; */
+}
+.child {
+    border: 3px solid green;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin-top: 10px;;
+}

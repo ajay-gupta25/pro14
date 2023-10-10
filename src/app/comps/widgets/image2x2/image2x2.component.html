@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <ng-content select="h1"></ng-content>
+        <div class="col-md-6 mt-1" *ngFor="let product of products;let i = index;">
+            <div class="text-center card">
+                <img class="card-img-top" src="https://placehold.co/140x80?text={{product.name}}" alt="...">
+                <div class="card-body">
+                    <div class="col-8 float-start text-start text-truncate">{{ product.name || 'Sample Product'}}</div>
+                    <div class="col-4 float-end text-end text-truncate">{{product.price || 0 | currency}} </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">This is Product#{{i+1}} of {{products.length}}</small>
+                </div>
+            </div>
+        </div>
+        <ng-content select=".link"></ng-content>
+    </div>
+</div>

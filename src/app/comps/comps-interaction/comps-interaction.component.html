@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-12">
+        <app-carousel [carouselImages]="headerCarousel" [carouselName]="'HeaderImages'"></app-carousel>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h3>Normal Behaviour</h3>
+            <ul *ngFor="let i of items">
+                <li>{{i}}</li>
+            </ul>
+            <div class="input-group mb-3">
+                <input #item type="text" class="form-control" placeholder="Item Name" aria-label="Item Name"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" color="success" type="button"
+                        (click)="items.push(item.value); item.value='';">Button</button>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="col-6">
+            <h3>Using @Input - @Output</h3>
+            <!-- <div>{{productList | json}}</div> -->
+            <!-- <ul class="list-group" *ngFor="let product of productList; let i = index;">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ product.productName}}-{{i}}
+                    <span class="badge-primary">$ {{product.productPrice || 0}}</span>
+                </li>
+            </ul> -->
+
+                <div class="row mb-2">
+                    <div class="col-md-6 mt-1" *ngFor="let product of productList;let i = index;">
+                        <div class="text-center card">
+                            <!-- style="background-size: cover; height:150px;background: url('https://placehold.co/100?text=Product+{{i}}') no-repeat center;" -->
+                            <img class="card-img-top" src="https://placehold.co/140x80?text=Product {{i+1}}" alt="...">
+                            <div class="card-body">
+                                <!-- <div class="card-title float-start">{{ product.productName || 'Sample Product'}}</div>
+                                <div class="card-title float-end">344</div> -->
+                                <div class="col-8 float-start text-start text-truncate">{{ product.productName || 'Sample Product'}}</div>
+                                <div class="col-4 float-end text-end text-truncate">{{product.productPrice || 0 | currency}} </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">This is Product#{{i+1}} of {{productList.length}}</small>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            <app-child-container class="child-container"
+                (data)="addProduct($event, $event)"></app-child-container>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h3>Using Services Variables</h3>
+            <div class="container">
+                <div class="row" *ngFor="let user of processService.globalUserList">
+                    <h5 class="col">{{user}}</h5>
+                </div>
+            </div>
+            <app-child2-container></app-child2-container>
+        </div>
+        <div class="col-6">
+            <h3> Using Observables</h3>
+            <ul *ngFor="let brand of brandList">
+                <li>{{brand.data}}</li>
+            </ul>
+            <app-child3-container></app-child3-container>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <app-image2x2></app-image2x2>
+        </div>
+    </div>
+</div>
